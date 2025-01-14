@@ -1,0 +1,13 @@
+# Copyright 2017, 2024 Sony Corporation
+# All rights, including trade secret rights, reserved.
+
+on late-init
+    setprop vendor.keyprovd.suntory.prov "false"
+    setprop vendor.sdm.wakeup "false"
+    setprop vendor.secd.wakeup "false"
+
+# start secd service
+service vendor.semc.hardware.secd-1-1 /vendor/bin/hw/vendor.semc.hardware.secd@1.1-service
+    class hal
+    user system
+    group system
